@@ -1,5 +1,5 @@
 {
-  "name": "FunctionalTests",
+  "name": "Appium",
   "description": "POC",
   "dependencies": {
     "appium": "^1.6.4",
