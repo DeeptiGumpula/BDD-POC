@@ -2,6 +2,7 @@
 
 This is the cucumber style BDD framework for testing mobile apps using JavaScript Appium driver.
 ###Steps to Run Android Suite
+- Go to project. then do `npm install`
 - Connect real device.
 - To run android tests using grunt - grunt android:5.0 (specify version number as required)
 - Error logs will be generated logs folder
