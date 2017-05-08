@@ -8,4 +8,5 @@ This is the cucumber style BDD framework for testing mobile apps using JavaScrip
 - Reports will be generated inside reports folder as android-report.html
 - Error logs will be generated logs folder
 
+Note:Before running tests .Go to features/support/caps.js and update app path.As i have hardcoded the path.
 

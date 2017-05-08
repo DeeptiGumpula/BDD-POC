@@ -26,6 +26,7 @@
     "chai-as-promised": "^4.3.0",
     "grunt-cli": "~0.1.13",
     "ps-node": "0.0.4",
-    "rekuire": "^0.1.9"
+    "rekuire": "^0.1.9",
+    "string-template": "^1.0.0"
   }
 }

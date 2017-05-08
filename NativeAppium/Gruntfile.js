@@ -84,15 +84,7 @@ module.exports = function (grunt) {
         });
     });
 
-
-    grunt.registerTask('setJellyBeanPlatform1', 'Set Environment Variable', function () {
-        process.env = _.merge(process.env, {
-            PLATFORM: 'android',
-            VERSION: '4.1'
-        });
-    });
-
-    grunt.registerTask('setJellyBeanPlatform2', 'Set Environment Variable', function () {
+    grunt.registerTask('setKitkat', 'Set Environment Variable', function () {
         process.env = _.merge(process.env, {
             PLATFORM: 'android',
             VERSION: '4.2'
