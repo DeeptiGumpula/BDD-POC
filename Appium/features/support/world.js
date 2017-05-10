@@ -3,6 +3,8 @@
 var util = require('util')
     , path = require('path')
     , pagesPath = util.format('../pages/%sPages', process.env.PLATFORM)
+    , expect = require('chai').expect
+    , assert = require("chai").assert
     , WelcomePage = require(path.join(pagesPath, 'welcomePage.js'))
     , ScanningPage = require(path.join(pagesPath,'scanningPage.js'));
 

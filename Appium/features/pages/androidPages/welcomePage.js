@@ -27,10 +27,9 @@ var WelcomePage = (function () {
         var that = this;
         return this.driver.elementById('tab_nav_history').tap().then(function (el) {
             return that.driver.elementById('tab_nav_history').sleep(3000).then(function (el) {
-                return that.driver.saveScreenshot(__dirname + '/current_screen.png')})
+                return that.driver.saveScreenshot(__dirname + '/source.png')})
         });
     };
-
     return WelcomePage;
 })();
 

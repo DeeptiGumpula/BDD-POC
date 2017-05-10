@@ -41,14 +41,23 @@ exports.getAllTextByListOfIds = function(driver, idArray){
 };
 
 exports.swipe = function (driver, opts) {
-  var action = new wd.TouchAction();
-  action
-    .press({x: opts.startX, y: opts.startY})
-    .wait(opts.duration)
-    .moveTo({x: opts.endX, y: opts.endY})
-    .release();
+    var action = new wd.TouchAction();
+    action
+        .press({x: opts.startX, y: opts.startY})
+        .wait(opts.duration)
+        .moveTo({x: opts.endX, y: opts.endY})
+        .release();
     return driver.performTouchAction(action);
 };
+
+exports.clickcoordinates = function (driver,x1,y1) {
+    var action = new wd.TouchAction();
+    action
+        .press({x:x1, y:y1 })
+        .release();
+    return driver.performTouchAction(action);
+};
+
 
 exports.scrollDown = function (driver){
   var opts = {endX: '0.5', endY: '1'};

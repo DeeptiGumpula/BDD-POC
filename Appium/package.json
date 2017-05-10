@@ -19,12 +19,15 @@
     "mustache": "^2.0.0",
     "q": "^1.2.0",
     "request": "^2.55.0",
+    "tesseract.js": "^1.0.10",
     "wd": "^0.3.11"
   },
   "devDependencies": {
     "chai": "^2.3.0",
     "chai-as-promised": "^4.3.0",
     "grunt-cli": "~0.1.13",
+    "logger": "0.0.1",
+    "nodecv": "^1.0.5",
     "ps-node": "0.0.4",
     "rekuire": "^0.1.9",
     "string-template": "^1.0.0"
