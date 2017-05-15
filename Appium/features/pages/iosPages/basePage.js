@@ -1,7 +1,11 @@
 'use strict';
 
 var Q = require('q')
-  , async = require('async');
+    , async = require('async')
+    , wd = require('wd')
+    , Asserter = wd.Asserter
+    , chai = require("chai");
+var rek = require('rekuire');
 
 exports.getListOfElementsNamesByClassName = function(driver, className){
   return Q.Promise(function(resolve){
@@ -16,4 +20,12 @@ exports.getListOfElementsNamesByClassName = function(driver, className){
       );
     });
   });
+};
+
+exports.clickcoordinates = function (driver,x1,y1) {
+    var action = new wd.TouchAction();
+    action
+        .press({x:x1, y:y1 })
+        .release();
+    return driver.performTouchAction(action);
 };

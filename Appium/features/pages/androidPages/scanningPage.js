@@ -1,6 +1,7 @@
 'use strict';
 var basePage = require('./basePage');
 const path = require('path');
+const images = path.join(__dirname, '../../../resources');
 const nodecv = require('nodecv');
 const logger = require('logger');
 var ScanningPage = (function () {
@@ -14,13 +15,13 @@ var ScanningPage = (function () {
         var that = this;
         return this.driver.elementById('tab_nav_history').tap().sleep(3000).then(function (el) {
             return that.driver.elementById('tab_nav_history').sleep(3000).then(function (el) {
-                return that.driver.saveScreenshot(__dirname + '/resources/source.png')
+                return that.driver.saveScreenshot(images + 'source.png')
             });
         });
     };
 
     ScanningPage.prototype.expandedcardmode = function () {
-        return this.driver.saveScreenshot(__dirname + '/resources/source.png').sleep(20000);
+        return this.driver.saveScreenshot(images + 'source.png').sleep(3000);
     }
 
     ScanningPage.prototype.tapByPosition = function (center1, center2) {
@@ -31,9 +32,9 @@ var ScanningPage = (function () {
         var len_match;
         var center, center1, center2;
         const color = [0, 0, 255];
-        const image1Path = path.join(__dirname, 'resources', template);
-        const image2Path = path.join(__dirname, 'resources', 'source.png');
-        const outputPath = path.join(__dirname, 'resources', 'output.jpg');
+        const image1Path = path.join(__dirname, '../../../resources', template);
+        const image2Path = path.join(__dirname, '../../../resources', 'source.png');
+        const outputPath = path.join(__dirname, '../../../resources', 'output.jpg');
         nodecv.imread(image2Path, function (err, image1) {
             console.log("image2Path" + image2Path);
             if (err) {

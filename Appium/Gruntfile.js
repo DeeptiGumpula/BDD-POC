@@ -19,6 +19,16 @@ module.exports = function (grunt) {
         },
 
         cucumberjs: {
+            ios: {
+                options: {
+                    format: 'pretty',
+                    output: './reports/ios-report.html',
+                    theme: 'bootstrap',
+                    tags: ['@ios'],
+                    debug: true
+                },
+                features: []
+            },
             android: {
                 options: {
                     format: 'pretty',
@@ -102,9 +112,16 @@ module.exports = function (grunt) {
             VERSION: '6.0'
         });
     });
+    grunt.registerTask('setIosPlatform', 'Set Environment Variable', function () {
+        process.env = _.merge(process.env, {
+            PLATFORM: 'ios',
+            VERSION: '10.1'
+        })
+    });
 
     grunt.registerTask('bootstrap', ['appium:stop', 'clean:reports', 'mkdir', 'appium:start']);
     grunt.registerTask('android:5.0', ['bootstrap', 'setLollipopPlatform', 'cucumberjs:android']);
     grunt.registerTask('android:6.0', ['bootstrap', 'setMarshmallowPlatform', 'cucumberjs:android']);
     grunt.registerTask('android:4.0', ['bootstrap', 'setKitkatPlatform', 'cucumberjs:android']);
+    grunt.registerTask('ios:10.1', ['appium:stop', 'mkdir', 'appium:start', 'setIosPlatform', 'cucumberjs:ios']);
 };
